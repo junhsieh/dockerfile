@@ -20,5 +20,5 @@ RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
 		php71u-process \
 		php71u-fpm-httpd
 
-#EXPOSE 9000
-#CMD ["php-fpm"]
+EXPOSE 9000
+CMD ["php-fpm"]
