@@ -25,8 +25,7 @@ EXPOSE 9000
 
 CMD ["php-fpm", "-F"]
 
-Running php-fpm in Docker based on CentOS
-
+### Running php-fpm in Docker based on CentOS.
 ### Some important settings to be changed:
 ### 
 ### # vim /etc/php-fpm.d/www.conf
