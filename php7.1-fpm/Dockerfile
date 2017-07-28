@@ -30,23 +30,31 @@ CMD ["php-fpm", "-F"]
 ### 
 ### # vim /etc/php-fpm.d/www.conf
 ### 
+### ; Change ownership:
+### 
 ### user = php-fpm
 ### group = php-fpm
 ### 
-### ; Note: Ubuntu uses www-data user. Add php-fpm user to www-data group if the other container uses it
+### ; Note: Ubuntu uses www-data user. Add php-fpm user to www-data group if the other container used it.
 ### ; # groupadd -g 33 www-data
 ### ; # useradd www-data -m -c 'web user' -u 33 -g 33
 ### ; # usermod -a -G www-data php-fpm
 ### ; # id php-fpm
 ### ; Now, restart this container to ensure php-fpm user is in www-data group.
 ### 
+### ; Bind port 9000 to the all interfaces:
+###
 ### listen = 9000
 ### 
 ### ; Comment out the following line:
+### 
 ### ;listen.allowed_clients = 127.0.0.1
 ### 
 ### ; Note: "listen.allowed_clients = any" will not work.
 ### ; Note: "listen.allowed_clients = other-container-name" will not work. IP address only.
 ### 
-### ; Uncomment the following line to debug the issue. Comment it out on production:
+### ; Uncomment the following line to debug the issue:
+### 
 ### catch_workers_output = yes
+### 
+### ; Note: Comment it out on production.
