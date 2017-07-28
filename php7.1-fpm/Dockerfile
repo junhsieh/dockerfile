@@ -17,8 +17,10 @@ RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
 		php71u-mbstring \
 		php71u-mcrypt \
 		php71u-gd \
+		php71u-soap \
 		php71u-process \
 		php71u-fpm-httpd
 
 EXPOSE 9000
+
 CMD ["php-fpm"]
