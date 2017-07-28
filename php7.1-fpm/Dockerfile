@@ -23,4 +23,4 @@ RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["php-fpm", "-F"]
