@@ -46,7 +46,7 @@ CMD ["php-fpm", "-F"]
 ### ;listen.allowed_clients = 127.0.0.1
 ### 
 ### ; Note: "listen.allowed_clients = any" will not work.
-### ; Note: "listen.allowed_clients = other-container-name" will not work.
+### ; Note: "listen.allowed_clients = other-container-name" will not work. IP address only.
 ### 
 ### ; Uncomment the following line to debug the issue:
 ### catch_workers_output = yes
