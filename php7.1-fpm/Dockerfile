@@ -19,6 +19,8 @@ RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
 		php71u-gd \
 		php71u-soap \
 		php71u-process \
+		php71u-pecl-redis \
+		php71u-pecl-xdebug \
 		php71u-fpm-httpd
 
 EXPOSE 9000
@@ -58,3 +60,22 @@ CMD ["php-fpm", "-F"]
 ### catch_workers_output = yes
 ### 
 ### ; Note: Comment it out on production.
+
+### xdebug setting
+###
+### ; Enable xdebug extension module
+### zend_extension=xdebug.so
+### ;zend_extension=/usr/lib64/php/modules/xdebug.so
+###
+### xdebug.default_enable=1
+### xdebug.remote_enable=1
+### xdebug.remote_handler=dbgp
+### xdebug.remote_host=localhost
+### xdebug.remote_port=9009
+### ; Note: php-fpm uses port 9000 as well.
+### xdebug.remote_log=/tmp/xdebug.log
+### xdebug.remote_connect_back=0
+### xdebug.remote_autostart=0
+### xdebug.remote_mode=req
+### 
+### xdebug.max_nesting_level=1000
