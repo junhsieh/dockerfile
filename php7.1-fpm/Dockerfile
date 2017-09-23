@@ -1,3 +1,6 @@
+###
+### docker build -t junhsieh/php7.1-fpm:1.0 -f Dockerfile .
+###
 FROM php:7.1-fpm
 
 RUN apt-get update

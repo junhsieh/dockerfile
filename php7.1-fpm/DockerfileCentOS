@@ -1,3 +1,6 @@
+###
+### docker build -t junhsieh/cent-php7.1-fpm:1.0 -f DockerfileCentOS .
+###
 FROM centos:centos7
 
 RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
