@@ -45,6 +45,9 @@ RUN cd \
 && cd / \
 && ln -s usr/local/apache2/htdocs www
 
+### Install locales
+RUN apt-get install -y locales
+
 ### Install PHP 7.1
 RUN locale-gen en_US.UTF-8 \
 && export LANG=en_US.UTF-8 \
