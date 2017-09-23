@@ -1,7 +1,7 @@
 ###
 ### docker build -t junhsieh/ubun-dev:1.0 -f Dockerfile .
 ###
-FROM ubuntu:16.10
+FROM ubuntu:16.04
 
 RUN apt-get update 
 
