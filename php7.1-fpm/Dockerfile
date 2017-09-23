@@ -17,15 +17,19 @@ RUN curl 'https://setup.ius.io/' -o setup-ius.sh \
 		php71u-mbstring \
 		php71u-mcrypt \
 		php71u-gd \
-		php71u-soap \
 		php71u-process \
+		php71u-soap \
 		php71u-pecl-redis \
 		php71u-pecl-xdebug \
 		php71u-fpm-httpd
 
+#RUN groupadd -g 33 www-data \
+#&& useradd www-data -m -c 'web user' -u 33 -g 33
+
 EXPOSE 9000
 
 CMD ["php-fpm", "-F"]
+#CMD ["true"]
 
 ### Running php-fpm in Docker based on CentOS.
 ### Some important settings to be changed:
@@ -52,8 +56,7 @@ CMD ["php-fpm", "-F"]
 ### 
 ### ;listen.allowed_clients = 127.0.0.1
 ### 
-### ; Note: "listen.allowed_clients = any" will not work.
-### ; Note: "listen.allowed_clients = other-container-name" will not work. IP address only.
+### ; Note: "listen.allowed_clients" works with "IP address" only (put down "any" or "other-container-name" won't work).
 ### 
 ### ; Uncomment the following line to debug the issue:
 ### 
